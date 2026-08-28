@@ -173,6 +173,45 @@ body{
     margin:0 0 22px;
 }
 
+.musicCard{
+    text-align:center;
+    padding:35px 20px;
+    border-radius:25px;
+    background:linear-gradient(135deg,#f8b9d8,#c4ddff);
+}
+
+.musicIcon{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.musicCard h2{
+    margin:10px 0 5px;
+    font-size:25px;
+}
+
+.musicCard p{
+    margin:0 0 25px;
+    color:#555;
+    font-family:Arial,sans-serif;
+}
+
+.musicButton{
+    display:inline-block;
+    padding:14px 24px;
+    border-radius:30px;
+    background:#111;
+    color:white;
+    text-decoration:none;
+    font-family:Arial,sans-serif;
+    font-size:16px;
+    transition:.2s;
+}
+
+.musicButton:hover{
+    transform:scale(1.04);
+}
+
 .story{
     text-align:center;
     line-height:1.8;
@@ -187,9 +226,13 @@ body{
 
 @media(max-width:600px){
 
-    .names{font-size:35px}
+    .names{
+        font-size:35px;
+    }
 
-    .counterNumber{font-size:43px}
+    .counterNumber{
+        font-size:43px;
+    }
 
     .gallery{
         grid-template-columns:1fr;
@@ -232,7 +275,9 @@ body{
             autocomplete="off"
         >
 
-        <button id="loginButton">Giriş</button>
+        <button id="loginButton">
+            Giriş
+        </button>
 
         <div id="error"></div>
 
@@ -247,15 +292,23 @@ body{
 
 <div class="hero">
 
-    <div class="hearts">♡ ♥ ♡</div>
+    <div class="hearts">
+        ♡ ♥ ♡
+    </div>
 
-    <div class="names">Azra &amp; Yusuf</div>
+    <div class="names">
+        Azra &amp; Yusuf
+    </div>
 
-    <div class="date">14.05.2022</div>
+    <div class="date">
+        14.05.2022
+    </div>
 
     <div class="counter">
 
-        <div class="counterNumber" id="daysTogether">0</div>
+        <div class="counterNumber" id="daysTogether">
+            0
+        </div>
 
         <div class="counterText">
             gündür birlikteyiz 💗
@@ -414,6 +467,37 @@ body{
 </div>
 
 
+<!-- BİZİM ŞARKIMIZ -->
+
+<div class="section">
+
+    <div class="sectionTitle">
+        🎵 Bizim Şarkımız
+    </div>
+
+    <div class="musicCard">
+
+        <div class="musicIcon">
+            🎶
+        </div>
+
+        <h2>Aşkın Cehennem Olsa</h2>
+
+        <p>Yıldız Tilbe</p>
+
+        <a
+            href="https://youtu.be/SRizBAa5WMQ?si=CmH_54Fa7jlLyypG"
+            target="_blank"
+            class="musicButton"
+        >
+            ▶ Şarkımızı Dinle ♡
+        </a>
+
+    </div>
+
+</div>
+
+
 <div class="section">
 
     <div class="sectionTitle">
@@ -452,7 +536,6 @@ const PASSWORD = "140522";
 
 const START_DATE = new Date(2022, 4, 14);
 
-
 function calculateDays(){
 
     const now = new Date();
@@ -472,7 +555,6 @@ function calculateDays(){
     );
 }
 
-
 function openSite(){
 
     document.getElementById("loginScreen").style.display = "none";
@@ -482,7 +564,6 @@ function openSite(){
     document.getElementById("daysTogether").textContent =
         calculateDays().toLocaleString("tr-TR");
 }
-
 
 function checkPassword(){
 
@@ -509,11 +590,9 @@ function checkPassword(){
     }
 }
 
-
 document
     .getElementById("loginButton")
     .addEventListener("click",checkPassword);
-
 
 document
     .getElementById("password")
