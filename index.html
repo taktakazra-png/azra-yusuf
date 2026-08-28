@@ -6,288 +6,222 @@
 <title>Azra & Yusuf ♡</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+    margin:0;
+    font-family:Georgia,"Times New Roman",serif;
+    color:#111;
+    background:linear-gradient(135deg,#f6a8cf,#b9dcff);
 }
 
-html {
-    scroll-behavior: smooth;
+#loginScreen{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
 }
 
-body {
-    margin: 0;
-    font-family: Georgia, "Times New Roman", serif;
-    color: #111;
-    background: linear-gradient(135deg, #f6a8cf, #b9dcff);
+.loginBox{
+    width:100%;
+    max-width:400px;
+    padding:45px 25px;
+    background:rgba(255,255,255,.95);
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,.18);
 }
 
-/* ŞİFRE EKRANI */
+.lock{font-size:48px}
 
-#loginScreen {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+.loginBox h1{
+    font-size:30px;
+    margin:15px 0 10px;
 }
 
-.loginBox {
-    width: 100%;
-    max-width: 400px;
-    padding: 45px 25px;
-    background: rgba(255,255,255,0.95);
-    border-radius: 30px;
-    text-align: center;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+.loginBox p{
+    color:#555;
+    font-family:Arial,sans-serif;
 }
 
-.lock {
-    font-size: 48px;
+#password{
+    width:100%;
+    padding:15px;
+    margin:15px 0;
+    border:2px solid #111;
+    border-radius:14px;
+    font-size:18px;
+    text-align:center;
+    outline:none;
 }
 
-.loginBox h1 {
-    font-size: 30px;
-    margin: 15px 0 10px;
+#loginButton{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:#111;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
 }
 
-.loginBox p {
-    color: #555;
-    font-family: Arial, sans-serif;
+#error{
+    color:#d00050;
+    min-height:22px;
+    margin-top:10px;
+    font-family:Arial,sans-serif;
 }
 
-#password {
-    width: 100%;
-    padding: 15px;
-    margin: 15px 0;
-    border: 2px solid #111;
-    border-radius: 14px;
-    font-size: 18px;
-    text-align: center;
-    outline: none;
+#mainScreen{
+    display:none;
+    min-height:100vh;
 }
 
-#loginButton {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 14px;
-    background: #111;
-    color: white;
-    font-size: 17px;
-    cursor: pointer;
+.container{
+    width:92%;
+    max-width:850px;
+    margin:auto;
+    padding:35px 0 70px;
 }
 
-#error {
-    color: #d00050;
-    min-height: 22px;
-    margin-top: 10px;
-    font-family: Arial, sans-serif;
+.hero{
+    text-align:center;
+    padding:35px 20px;
+    background:rgba(255,255,255,.9);
+    border-radius:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
 }
 
-
-/* ANA SAYFA */
-
-#mainScreen {
-    display: none;
-    min-height: 100vh;
+.hearts{
+    font-size:30px;
+    letter-spacing:8px;
 }
 
-.container {
-    width: 92%;
-    max-width: 850px;
-    margin: auto;
-    padding: 35px 0 70px;
+.names{
+    font-size:45px;
+    font-weight:bold;
+    margin:15px 0 5px;
 }
 
-
-/* BAŞLIK */
-
-.hero {
-    text-align: center;
-    padding: 35px 20px;
-    background: rgba(255,255,255,0.9);
-    border-radius: 30px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+.date{
+    font-size:20px;
+    color:#555;
 }
 
-.hearts {
-    font-size: 30px;
-    letter-spacing: 8px;
+.counter{
+    margin-top:25px;
+    padding:25px;
+    border-radius:25px;
+    background:linear-gradient(135deg,#f8b9d8,#c4ddff);
+    text-align:center;
 }
 
-.names {
-    font-size: 45px;
-    font-weight: bold;
-    margin: 15px 0 5px;
+.counterNumber{
+    font-family:Arial,sans-serif;
+    font-size:55px;
+    font-weight:bold;
 }
 
-.date {
-    font-size: 20px;
-    color: #555;
+.counterText{
+    font-family:Arial,sans-serif;
+    font-size:17px;
 }
 
-
-/* GÜN SAYACI */
-
-.counter {
-    margin-top: 25px;
-    padding: 25px;
-    border-radius: 25px;
-    background: linear-gradient(135deg, #f8b9d8, #c4ddff);
-    text-align: center;
+.section{
+    margin-top:30px;
+    padding:30px 20px;
+    background:rgba(255,255,255,.92);
+    border-radius:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,.1);
 }
 
-.counterNumber {
-    font-family: Arial, sans-serif;
-    font-size: 55px;
-    font-weight: bold;
+.sectionTitle{
+    text-align:center;
+    font-size:29px;
+    margin-bottom:25px;
 }
 
-.counterText {
-    font-family: Arial, sans-serif;
-    font-size: 17px;
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
 }
 
-
-/* BÖLÜMLER */
-
-.section {
-    margin-top: 30px;
-    padding: 30px 20px;
-    background: rgba(255,255,255,0.92);
-    border-radius: 30px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:18px;
+    display:block;
 }
 
-.sectionTitle {
-    text-align: center;
-    font-size: 29px;
-    margin-bottom: 25px;
+.letter{
+    background:#fffdf7;
+    padding:30px 25px;
+    border-radius:8px;
+    box-shadow:0 8px 25px rgba(0,0,0,.10);
+    border-left:5px solid #e99bc1;
 }
 
-
-/* FOTOĞRAFLAR */
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+.letter p{
+    font-size:18px;
+    line-height:1.9;
+    margin:0 0 22px;
 }
 
-.gallery img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 18px;
-    display: block;
-    transition: transform 0.3s;
+.story{
+    text-align:center;
+    line-height:1.8;
+    font-size:18px;
 }
 
-.gallery img:hover {
-    transform: scale(1.03);
+.storyDate{
+    font-weight:bold;
+    font-size:21px;
+    margin-bottom:10px;
 }
 
+@media(max-width:600px){
 
-/* MEKTUP */
+    .names{font-size:35px}
 
-.letter {
-    background: #fffdf7;
-    padding: 30px 25px;
-    border-radius: 8px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.10);
-    border-left: 5px solid #e99bc1;
-}
+    .counterNumber{font-size:43px}
 
-.letter p {
-    font-size: 18px;
-    line-height: 1.9;
-    margin: 0 0 22px;
-}
-
-.letter p:last-child {
-    margin-bottom: 0;
-}
-
-
-/* HİKAYE */
-
-.story {
-    text-align: center;
-    line-height: 1.8;
-    font-size: 18px;
-}
-
-.storyDate {
-    font-weight: bold;
-    font-size: 21px;
-    margin-bottom: 10px;
-}
-
-
-/* ALT KISIM */
-
-.footer {
-    text-align: center;
-    margin-top: 35px;
-    font-size: 20px;
-    font-style: italic;
-}
-
-
-/* TELEFON */
-
-@media (max-width: 600px) {
-
-    .names {
-        font-size: 35px;
+    .gallery{
+        grid-template-columns:1fr;
     }
 
-    .counterNumber {
-        font-size: 43px;
+    .gallery img{
+        height:300px;
     }
 
-    .gallery {
-        grid-template-columns: 1fr;
+    .letter{
+        padding:25px 18px;
     }
 
-    .gallery img {
-        height: 300px;
-    }
-
-    .letter {
-        padding: 25px 18px;
-    }
-
-    .letter p {
-        font-size: 17px;
-        line-height: 1.85;
+    .letter p{
+        font-size:17px;
+        line-height:1.85;
     }
 }
-
 </style>
 </head>
 
-
 <body>
-
-
-<!-- ŞİFRE EKRANI -->
 
 <div id="loginScreen">
 
     <div class="loginBox">
 
-        <div class="lock">
-            🔒
-        </div>
+        <div class="lock">🔒</div>
 
-        <h1>
-            Özel bir yer
-        </h1>
+        <h1>Özel bir yer</h1>
 
-        <p>
-            Devam etmek için şifreyi gir.
-        </p>
+        <p>Devam etmek için şifreyi gir.</p>
 
         <input
             id="password"
@@ -298,9 +232,7 @@ body {
             autocomplete="off"
         >
 
-        <button id="loginButton">
-            Giriş
-        </button>
+        <button id="loginButton">Giriş</button>
 
         <div id="error"></div>
 
@@ -309,41 +241,21 @@ body {
 </div>
 
 
-
-<!-- ANA SAYFA -->
-
 <div id="mainScreen">
 
 <div class="container">
 
-
-<!-- BAŞLIK -->
-
 <div class="hero">
 
-    <div class="hearts">
-        ♡ ♥ ♡
-    </div>
+    <div class="hearts">♡ ♥ ♡</div>
 
-    <div class="names">
-        Azra &amp; Yusuf
-    </div>
+    <div class="names">Azra &amp; Yusuf</div>
 
-    <div class="date">
-        14.05.2022
-    </div>
-
-
-    <!-- GÜN SAYACI -->
+    <div class="date">14.05.2022</div>
 
     <div class="counter">
 
-        <div
-            class="counterNumber"
-            id="daysTogether"
-        >
-            0
-        </div>
+        <div class="counterNumber" id="daysTogether">0</div>
 
         <div class="counterText">
             gündür birlikteyiz 💗
@@ -354,9 +266,6 @@ body {
 </div>
 
 
-
-<!-- FOTOĞRAFLAR -->
-
 <div class="section">
 
     <div class="sectionTitle">
@@ -365,35 +274,32 @@ body {
 
     <div class="gallery">
 
-        <img src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.26%20%281%29.jpeg" alt="Anımız">
+        <img src="WhatsApp%20Image%202026-08-29%20at%2001.00.26%20%281%29.jpeg" alt="Anımız">
 
-        <img src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.26.jpeg" alt="Anımız">
+        <img src="WhatsApp%20Image%202026-08-29%20at%2001.00.26.jpeg" alt="Anımız">
 
-        <img src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.30%20%281%29.jpeg" alt="Anımız">
+        <img src="WhatsApp%20Image%202026-08-29%20at%2001.00.30%20%281%29.jpeg" alt="Anımız">
 
-        <img src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.30%20%282%29.jpeg" alt="Anımız">
+        <img src="WhatsApp%20Image%202026-08-29%20at%2001.00.30%20%282%29.jpeg" alt="Anımız">
 
-        <img src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.30%20%283%29.jpeg" alt="Anımız">
+        <img src="WhatsApp%20Image%202026-08-29%20at%2001.00.30%20%283%29.jpeg" alt="Anımız">
 
-        <img src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.30%20%284%29.jpeg" alt="Anımız">
+        <img src="WhatsApp%20Image%202026-08-29%20at%2001.00.30%20%284%29.jpeg" alt="Anımız">
 
-        <img src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.30%20%285%29.jpeg" alt="Anımız">
+        <img src="WhatsApp%20Image%202026-08-29%20at%2001.00.30%20%285%29.jpeg" alt="Anımız">
 
-        <img src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.30%20%287%29.jpeg" alt="Anımız">
+        <img src="WhatsApp%20Image%202026-08-29%20at%2001.00.30%20%287%29.jpeg" alt="Anımız">
 
-        <img src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.30.jpeg" alt="Anımız">
+        <img src="WhatsApp%20Image%202026-08-29%20at%2001.00.30.jpeg" alt="Anımız">
 
-        <img src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.31.jpeg" alt="Anımız">
+        <img src="WhatsApp%20Image%202026-08-29%20at%2001.00.31.jpeg" alt="Anımız">
 
-        <img src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.01.38.jpeg" alt="Anımız">
+        <img src="WhatsApp%20Image%202026-08-29%20at%2001.01.38.jpeg" alt="Anımız">
 
     </div>
 
 </div>
 
-
-
-<!-- MEKTUP -->
 
 <div class="section">
 
@@ -403,117 +309,110 @@ body {
 
     <div class="letter">
 
+        <p>Sevgilim, birtanem, canımın içi</p>
+
         <p>
-            Sevgilim, birtanem, canımın içi
+        Sen hayatıma öyle bir girdin ki hiç istemediğim bir zamanda,
+        hiç beklemediğim bir anda oldu. İlk başta seninle birlikte olmak
+        heyecanlıydı, huzurluydu. Çünkü seninle konuşmaya başladıktan sonra
+        fark ettim ki ben seninle tamamlanıyormuşum. Hayatıma girdiğinde hiç
+        yabancılık çekmedim. Sanki her zaman zaten orda var olman gerekiyor
+        gibiydi. Geldin ve beni tamamladın. Yanındayken o kadar huzurluydum ki
+        seninle uzun yıllar birlikte olacağımızı biliyordum. Ve öyle de oldu,
+        Rabbime şükür.
         </p>
 
         <p>
-            Sen hayatıma öyle bir girdin ki hiç istemediğim bir zamanda,
-            hiç beklemediğim bir anda oldu. İlk başta seninle birlikte olmak
-            heyecanlıydı, huzurluydu. Çünkü seninle konuşmaya başladıktan sonra
-            fark ettim ki ben seninle tamamlanıyormuşum. Hayatıma girdiğinde
-            hiç yabancılık çekmedim. Sanki her zaman zaten orda var olman
-            gerekiyor gibiydi. Geldin ve beni tamamladın. Yanındayken o kadar
-            huzurluydum ki seninle uzun yıllar birlikte olacağımızı biliyordum.
-            Ve öyle de oldu, Rabbime şükür.
+        İlişkimiz ilerledikçe ciddileştiği için korktum, kendimden,
+        öğrenilmesinden. Bunları zaten biliyorsun. Bu yüzden seni sevsem de
+        yapamayacağımı düşündüm ve senden ayrıldım. Bunun için, sana
+        yaşattıklarım için, seni hafızlık sınavına yakın yarı yolda bıraktığım
+        için özür dilerim. Ama şunu bilmeni istiyorum ki biraz klişe ama sorun
+        tabi ki sende değildi. Dediğim gibi korkmuştum sadece ama sen benden
+        hiç vazgeçmedin. Bizden hiç vazgeçmedin. 4 ay boyunca geri dönmem için
+        çabaladın, herşeyi yaptın. Tüm o emeklerin için sana gerçekten çok
+        teşekkür ederim aşkım. İyi ki o zaman bu kadar çabaladın, iyi ki bizi
+        bırakmadın.
         </p>
 
         <p>
-            İlişkimiz ilerledikçe ciddileştiği için korktum, kendimden,
-            öğrenilmesinden. Bunları zaten biliyorsun. Bu yüzden seni sevsem de
-            yapamayacağımı düşündüm ve senden ayrıldım. Bunun için, sana
-            yaşattıklarım için, seni hafızlık sınavına yakın yarı yolda
-            bıraktığım için özür dilerim. Ama şunu bilmeni istiyorum ki biraz
-            klişe ama sorun tabi ki sende değildi. Dediğim gibi korkmuştum
-            sadece ama sen benden hiç vazgeçmedin. Bizden hiç vazgeçmedin.
-            4 ay boyunca geri dönmem için çabaladın, herşeyi yaptın. Tüm o
-            emeklerin için sana gerçekten çok teşekkür ederim aşkım. İyi ki
-            o zaman bu kadar çabaladın, iyi ki bizi bırakmadın.
+        Seninle olmak o kadar güzel ki. Gözlerine baktığımda tüm dertlerimi
+        unutturuyorsun bana. Sadece gözlerine bakmak da değil sesini duymak
+        hatta bir mesajını almak bile yetiyor beni heyecanlandırman için.
+        Senden gelen o farklı zil sesi.. Kalbimi yıllar geçse de hâlâ
+        hızlandırıyor. Çünkü dediğim gibi sen zamanla değişiyorsun ve ben her
+        haline tekrar aşık oluyorum.
         </p>
 
         <p>
-            Seninle olmak o kadar güzel ki. Gözlerine baktığımda tüm dertlerimi
-            unutturuyorsun bana. Sadece gözlerine bakmak da değil sesini duymak
-            hatta bir mesajını almak bile yetiyor beni heyecanlandırman için.
-            Senden gelen o farklı zil sesi..
-            Kalbimi yıllar geçse de hâlâ hızlandırıyor. Çünkü dediğim gibi
-            sen zamanla değişiyorsun ve ben her haline tekrar aşık oluyorum.
+        Zaman zaman zorluklar yaşıyoruz, kavgalar ediyoruz, birbirimizi yanlış
+        anlıyoruz biliyorum. Ama her şeyden önemlisi biz birbirimizi çok
+        seviyoruz aşkım. Ben bizim için yıllar önce emek verip tekrar bizi
+        kazanmak isteyen 16 yaşında ki yusufu unutmadım, unutamam da. Ben de
+        inşallah Rabbimin de izniyle seni bırakmayacağım aşkım. Aşkımızı,
+        sevgimizi, bizi bırakmak istemiyorum.
         </p>
 
         <p>
-            Zaman zaman zorluklar yaşıyoruz, kavgalar ediyoruz, birbirimizi
-            yanlış anlıyoruz biliyorum. Ama her şeyden önemlisi biz birbirimizi
-            çok seviyoruz aşkım. Ben bizim için yıllar önce emek verip tekrar
-            bizi kazanmak isteyen 16 yaşında ki yusufu unutmadım, unutamam da.
-            Ben de inşallah Rabbimin de izniyle seni bırakmayacağım aşkım.
-            Aşkımızı, sevgimizi, bizi bırakmak istemiyorum.
+        Ne yaşarsak yaşayalım, ne kadar büyük kavgalar edersek edelim lütfen
+        hiç bir zaman seçeneğimiz ayrılmak olmasın. Buralara kolay gelmedik,
+        yolun zorlu olduğunu biliyorduk. Çünkü bu yola erken başladık.
         </p>
 
         <p>
-            Ne yaşarsak yaşayalım, ne kadar büyük kavgalar edersek edelim
-            lütfen hiç bir zaman seçeneğimiz ayrılmak olmasın. Buralara kolay
-            gelmedik, yolun zorlu olduğunu biliyorduk. Çünkü bu yola erken
-            başladık.
+        Bu yüzden de çaba göstermek için bir nedenim var birtanem.
+        Affedilmeyecek hatalar yapacağımızı düşünmüyorum inşallah. Bu yüzden
+        yorulsak da bazen devam edemeyecek gibi hissetsek de birbirimize olan
+        sevgimizin, inancımızın bize ne kadar güç verdiğini, bizi ne kadar
+        mutlu ettiğini, tüm o gelişen zorlukların dışında çok güzel bir
+        ilişkimiz olduğunu hiç bir zaman unutmayalım olur mu aşkım?
         </p>
 
         <p>
-            Bu yüzden de çaba göstermek için bir nedenim var birtanem.
-            Affedilmeyecek hatalar yapacağımızı düşünmüyorum inşallah. Bu yüzden
-            yorulsak da bazen devam edemeyecek gibi hissetsek de birbirimize
-            olan sevgimizin, inancımızın bize ne kadar güç verdiğini, bizi ne
-            kadar mutlu ettiğini, tüm o gelişen zorlukların dışında çok güzel
-            bir ilişkimiz olduğunu hiç bir zaman unutmayalım olur mu aşkım?
+        Eğer bir gün tekrar yorulursak ki inşallah o gün hiç gelmez, buraya
+        yazdığım bu yazıyı okuyalım aşkım. Birbirimize ne kadar aşık olduğumuzu
+        hatırlayalım. Yorulduk diye vazgeçmeyelim birbirimizi bırakmayalım
+        birtanem. Birlikte büyüyen, yanlışları ve doğruları birlikte öğrenen
+        hatta şekillendiren o daha küçücük azra ve yusufu hiç unutmayalım.
+        Onların hislerini de hayallerini de yarı yolda bırakmayalım.
+        Sevgimizin gerçekten tüm sorunları çözeceğine inanalım.
         </p>
 
         <p>
-            Eğer bir gün tekrar yorulursak ki inşallah o gün hiç gelmez,
-            buraya yazdığım bu yazıyı okuyalım aşkım. Birbirimize ne kadar aşık
-            olduğumuzu hatırlayalım. Yorulduk diye vazgeçmeyelim birbirimizi
-            bırakmayalım birtanem. Birlikte büyüyen, yanlışları ve doğruları
-            birlikte öğrenen hatta şekillendiren o daha küçücük azra ve yusufu
-            hiç unutmayalım. Onların hislerini de hayallerini de yarı yolda
-            bırakmayalım. Sevgimizin gerçekten tüm sorunları çözeceğine
-            inanalım.
+        Bu yazıyı seni hem ne kadar çok sevdiğimi anlatmak için hem de
+        birbirimizi hatırlatmak için yazdım.
         </p>
 
         <p>
-            Bu yazıyı seni hem ne kadar çok sevdiğimi anlatmak için hem de
-            birbirimizi hatırlatmak için yazdım.
+        Sen benim her şeyimsin birtanem. Seni gerçekten çok seviyorum ve
+        seninle olan tüm hayallerimi gerçekleştirmek istiyorum.
         </p>
 
         <p>
-            Sen benim her şeyimsin birtanem. Seni gerçekten çok seviyorum ve
-            seninle olan tüm hayallerimi gerçekleştirmek istiyorum.
+        İyi ki o gün bana o mesajı attın sevgilim ya. En zor zamanlarımda
+        yanımda oldun. Destek oldun, moral oldun. Her şeyden de öte gerçekten
+        hayat arkadaşım oldum. Sana her şey için çok teşekkür ederim canımın içi.
         </p>
 
         <p>
-            İyi ki o gün bana o mesajı attın sevgilim ya. En zor zamanlarımda
-            yanımda oldun. Destek oldun, moral oldun. Her şeyden de öte gerçekten
-            hayat arkadaşım oldum. Sana her şey için çok teşekkür ederim canımın içi.
+        İnşallah bu siteyi bir gün birlikte çocuklarımız Asena ve
+        Alparslan’a da okuruz🥰.
         </p>
 
         <p>
-            İnşallah bu siteyi bir gün birlikte çocuklarımız Asena ve
-            Alparslan’a da okuruz🥰.
+        Biraz uzun bir yazı oldu biliyorum ama ben seninle çok konuşuyorum
+        sende bunu biliyorsun:)
         </p>
 
         <p>
-            Biraz uzun bir yazı oldu biliyorum ama ben seninle çok konuşuyorum
-            sende bunu biliyorsun:)
-        </p>
-
-        <p>
-            İyi ki varsın sevgilim seni çok çok çok çooook seviyorum
-            ❤️‍🔥❤️‍🔥
+        İyi ki varsın sevgilim seni çok çok çok çooook seviyorum
+        ❤️‍🔥❤️‍🔥
         </p>
 
     </div>
 
 </div>
 
-
-
-<!-- HİKAYEMİZ -->
 
 <div class="section">
 
@@ -543,41 +442,18 @@ body {
 </div>
 
 
-
-<!-- SON -->
-
-<div class="footer">
-
-    “Kader gayrete aşıktır.” ❤️
-
-    <br><br>
-
-    Hikâyemiz daha yeni başlıyor...
-
 </div>
-
-
 </div>
-
-</div>
-
 
 
 <script>
 
-/* ŞİFRE */
-
 const PASSWORD = "140522";
-
-
-/* BAŞLANGIÇ TARİHİ */
 
 const START_DATE = new Date(2022, 4, 14);
 
 
-/* GÜN SAYISI */
-
-function calculateDays() {
+function calculateDays(){
 
     const now = new Date();
 
@@ -592,36 +468,23 @@ function calculateDays() {
         START_DATE.getTime();
 
     return Math.floor(
-        difference /
-        (1000 * 60 * 60 * 24)
+        difference / (1000 * 60 * 60 * 24)
     );
-
 }
 
 
-/* SITEYİ AÇ */
+function openSite(){
 
-function openSite() {
+    document.getElementById("loginScreen").style.display = "none";
 
-    document
-        .getElementById("loginScreen")
-        .style.display = "none";
+    document.getElementById("mainScreen").style.display = "block";
 
-    document
-        .getElementById("mainScreen")
-        .style.display = "block";
-
-    document
-        .getElementById("daysTogether")
-        .textContent =
+    document.getElementById("daysTogether").textContent =
         calculateDays().toLocaleString("tr-TR");
-
 }
 
 
-/* ŞİFRE KONTROL */
-
-function checkPassword() {
+function checkPassword(){
 
     const input =
         document.getElementById("password");
@@ -629,13 +492,13 @@ function checkPassword() {
     const error =
         document.getElementById("error");
 
-    if (input.value === PASSWORD) {
+    if(input.value === PASSWORD){
 
         error.textContent = "";
 
         openSite();
 
-    } else {
+    }else{
 
         error.textContent =
             "Şifre yanlış. Tekrar dene.";
@@ -643,38 +506,24 @@ function checkPassword() {
         input.value = "";
 
         input.focus();
-
     }
-
 }
 
 
-/* BUTON */
-
 document
     .getElementById("loginButton")
-    .addEventListener(
-        "click",
-        checkPassword
-    );
+    .addEventListener("click",checkPassword);
 
-
-/* ENTER */
 
 document
     .getElementById("password")
-    .addEventListener(
-        "keydown",
-        function(event) {
+    .addEventListener("keydown",function(event){
 
-            if (event.key === "Enter") {
-
-                checkPassword();
-
-            }
-
+        if(event.key === "Enter"){
+            checkPassword();
         }
-    );
+
+    });
 
 </script>
 
