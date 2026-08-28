@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bizim Hikâyemiz</title>
+<title>Azra & Yusuf ♡</title>
 
 <style>
 
@@ -12,27 +12,23 @@
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f6a8cf,
-            #b8d8ff
-        );
-
-    color: #111;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+html {
+    scroll-behavior: smooth;
 }
 
-.screen {
-    width: 100%;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #111;
+    background: linear-gradient(135deg, #f7b6d2, #b9dcff);
+}
+
+
+/* =========================
+   ŞİFRE EKRANI
+========================= */
+
+#loginScreen {
     min-height: 100vh;
 
     display: flex;
@@ -42,41 +38,39 @@ body {
     padding: 20px;
 }
 
-.hidden {
-    display: none !important;
-}
-
-.box {
+.loginBox {
     width: 100%;
-    max-width: 600px;
+    max-width: 400px;
 
-    background: rgba(255,255,255,0.93);
+    padding: 45px 25px;
+
+    background: rgba(255,255,255,0.94);
 
     border-radius: 30px;
 
-    padding: 40px 25px;
-
     text-align: center;
 
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.18);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.18);
 }
-
-/* ŞİFRE EKRANI */
 
 .lock {
-    font-size: 45px;
+    font-size: 48px;
 }
 
-h1 {
-    font-size: 30px;
+.loginBox h1 {
+    margin: 15px 0 10px;
 }
 
-input {
+.loginBox p {
+    color: #555;
+}
+
+#password {
     width: 100%;
-    max-width: 300px;
 
     padding: 15px;
+
+    margin: 15px 0;
 
     border: 2px solid #111;
 
@@ -86,14 +80,11 @@ input {
 
     text-align: center;
 
-    margin: 15px 0;
-
     outline: none;
 }
 
-button {
+#loginButton {
     width: 100%;
-    max-width: 300px;
 
     padding: 15px;
 
@@ -113,209 +104,494 @@ button {
 #error {
     color: #d00050;
 
-    margin-top: 10px;
-
     min-height: 22px;
+
+    margin-top: 10px;
 }
 
-/* ANA SAYFA */
 
-.names {
-    font-size: 40px;
+/* =========================
+   ANA SAYFA
+========================= */
 
-    font-weight: bold;
+#mainScreen {
+    display: none;
 
-    margin: 15px 0;
+    min-height: 100vh;
 }
 
-.date {
-    font-size: 20px;
+.container {
+    width: 92%;
+    max-width: 850px;
 
-    margin-bottom: 30px;
+    margin: auto;
+
+    padding: 45px 0 70px;
 }
 
-.counter {
-    padding: 25px;
 
-    border-radius: 25px;
+/* =========================
+   BAŞLIK
+========================= */
 
-    background:
-        linear-gradient(
-            135deg,
-            #f8b9d8,
-            #c4ddff
-        );
+.hero {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    background: rgba(255,255,255,0.88);
+
+    border-radius: 30px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
 }
 
-.number {
-    font-size: 50px;
-
-    font-weight: bold;
-
-    margin-bottom: 8px;
-}
-
-.quote {
-    font-size: 20px;
-
-    font-style: italic;
-
-    margin-top: 30px;
-}
-
-.heart {
+.hearts {
     font-size: 30px;
 
     letter-spacing: 8px;
 }
 
-</style>
+.names {
+    font-size: 45px;
 
+    font-weight: bold;
+
+    margin: 15px 0 5px;
+}
+
+.date {
+    font-size: 20px;
+
+    color: #555;
+}
+
+
+/* =========================
+   GÜN SAYACI
+========================= */
+
+.counter {
+    margin-top: 25px;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #f8b9d8,
+        #c4ddff
+    );
+
+    text-align: center;
+}
+
+.counterNumber {
+    font-size: 55px;
+
+    font-weight: bold;
+}
+
+.counterText {
+    font-size: 17px;
+}
+
+
+/* =========================
+   BÖLÜMLER
+========================= */
+
+.section {
+    margin-top: 30px;
+
+    padding: 30px 20px;
+
+    background: rgba(255,255,255,0.9);
+
+    border-radius: 30px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.sectionTitle {
+    text-align: center;
+
+    font-size: 28px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   FOTOĞRAFLAR
+========================= */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+
+    height: 250px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    display: block;
+
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+
+/* =========================
+   NOT
+========================= */
+
+.note {
+    text-align: center;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   HİKAYE
+========================= */
+
+.story {
+    text-align: center;
+
+    line-height: 1.8;
+
+    font-size: 17px;
+}
+
+.storyDate {
+    font-weight: bold;
+
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   ALT KISIM
+========================= */
+
+.footer {
+    text-align: center;
+
+    margin-top: 35px;
+
+    font-size: 20px;
+
+    font-style: italic;
+}
+
+
+/* TELEFON */
+
+@media (max-width: 600px) {
+
+    .names {
+        font-size: 34px;
+    }
+
+    .counterNumber {
+        font-size: 42px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        height: 300px;
+    }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
 
-<!-- ========================= -->
-<!-- ŞİFRE EKRANI -->
-<!-- ========================= -->
+<!-- =================================================
+     ŞİFRE EKRANI
+================================================= -->
 
-<section
-    id="loginScreen"
-    class="screen"
->
+<div id="loginScreen">
 
-<div class="box">
+    <div class="loginBox">
 
-    <div class="lock">
-        🔒
-    </div>
+        <div class="lock">
+            🔒
+        </div>
 
-    <h1>
-        Özel bir yer
-    </h1>
+        <h1>
+            Özel bir yer
+        </h1>
 
-    <p>
-        Devam etmek için şifreyi gir.
-    </p>
+        <p>
+            Devam etmek için şifreyi gir.
+        </p>
 
-    <input
-        id="password"
-        type="password"
-        inputmode="numeric"
-        maxlength="6"
-        placeholder="Şifre"
-        autocomplete="off"
-    >
-
-    <button
-        id="loginButton"
-    >
-        Giriş
-    </button>
-
-    <div id="error"></div>
-
-</div>
-
-</section>
-
-
-<!-- ========================= -->
-<!-- ANA SAYFA -->
-<!-- ========================= -->
-
-<section
-    id="mainScreen"
-    class="screen hidden"
->
-
-<div class="box">
-
-    <div class="heart">
-        ♡ ♥ ♡
-    </div>
-
-    <div class="names">
-        Azra &amp; Yusuf
-    </div>
-
-    <div class="date">
-        14.05.2022
-    </div>
-
-
-    <div class="counter">
-
-        <div
-            class="number"
-            id="daysTogether"
+        <input
+            id="password"
+            type="password"
+            inputmode="numeric"
+            maxlength="6"
+            placeholder="Şifre"
+            autocomplete="off"
         >
-            0
-        </div>
 
-        <div>
-            gündür birlikteyiz 💗
-        </div>
+        <button id="loginButton">
+            Giriş
+        </button>
 
-    </div>
+        <div id="error"></div>
 
-
-    <div class="quote">
-
-        “Kader gayrete aşıktır.”
-
-    </div>
-
-
-    <div class="heart">
-        ♥
     </div>
 
 </div>
 
-</section>
+
+
+<!-- =================================================
+     ANA SAYFA
+================================================= -->
+
+<div id="mainScreen">
+
+<div class="container">
+
+
+    <!-- BAŞLIK -->
+
+    <div class="hero">
+
+        <div class="hearts">
+            ♡ ♥ ♡
+        </div>
+
+        <div class="names">
+            Azra &amp; Yusuf
+        </div>
+
+        <div class="date">
+            14.05.2022
+        </div>
+
+
+        <!-- GÜN SAYACI -->
+
+        <div class="counter">
+
+            <div
+                class="counterNumber"
+                id="daysTogether"
+            >
+                0
+            </div>
+
+            <div class="counterText">
+                gündür birlikteyiz 💗
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOTOĞRAFLAR -->
+
+    <div class="section">
+
+        <div class="sectionTitle">
+            📸 Anılarımız
+        </div>
+
+        <div class="gallery">
+
+
+            <img
+                src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.26%20%281%29.jpeg"
+                alt="Anımız"
+            >
+
+            <img
+                src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.26.jpeg"
+                alt="Anımız"
+            >
+
+            <img
+                src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.30%20%281%29.jpeg"
+                alt="Anımız"
+            >
+
+            <img
+                src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.30%20%282%29.jpeg"
+                alt="Anımız"
+            >
+
+            <img
+                src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.30%20%283%29.jpeg"
+                alt="Anımız"
+            >
+
+            <img
+                src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.30%20%284%29.jpeg"
+                alt="Anımız"
+            >
+
+            <img
+                src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.30%20%285%29.jpeg"
+                alt="Anımız"
+            >
+
+            <img
+                src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.30%20%287%29.jpeg"
+                alt="Anımız"
+            >
+
+            <img
+                src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.30.jpeg"
+                alt="Anımız"
+            >
+
+            <img
+                src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.00.31.jpeg"
+                alt="Anımız"
+            >
+
+            <img
+                src="fotograflar/WhatsApp%20Image%202026-08-29%20at%2001.01.38.jpeg"
+                alt="Anımız"
+            >
+
+        </div>
+
+    </div>
+
+
+
+    <!-- NOT -->
+
+    <div class="section">
+
+        <div class="sectionTitle">
+            💌 Sana küçük bir not
+        </div>
+
+        <div class="note">
+
+            Bazı insanlar hayatımıza girer,
+            bazıları ise hayatımızın kendisi olur. ❤️
+
+            <br><br>
+
+            İyi ki varsın,
+            iyi ki biz olduk.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- HİKAYEMİZ -->
+
+    <div class="section">
+
+        <div class="sectionTitle">
+            🌷 Bizim Hikâyemiz
+        </div>
+
+        <div class="story">
+
+            <div class="storyDate">
+                14 Mayıs 2022
+            </div>
+
+            Her şeyin başladığı gün... ❤️
+
+            <br><br>
+
+            O günden bugüne birlikte biriktirdiğimiz
+            onlarca anı, yüzlerce gülümseme
+            ve sayısız güzel an var.
+
+            <br><br>
+
+            Ve hikâyemiz hâlâ devam ediyor.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SON -->
+
+    <div class="footer">
+
+        “Kader gayrete aşıktır.” ❤️
+
+        <br><br>
+
+        Hikâyemiz daha yeni başlıyor...
+
+    </div>
+
+
+</div>
+
+</div>
+
 
 
 <script>
 
-/* ========================= */
-/* ŞİFRE */
-/* ========================= */
+
+/* =========================
+   ŞİFRE
+========================= */
 
 const PASSWORD = "140522";
 
 
-/* ========================= */
-/* BAŞLANGIÇ TARİHİ */
-/* ========================= */
-
-/*
-   JavaScript'te aylar 0'dan başlar.
-
-   4 = Mayıs
-
-   Yani:
-   2022, 4, 14
-   = 14 Mayıs 2022
-*/
+/* =========================
+   TARİH
+========================= */
 
 const START_DATE =
     new Date(2022, 4, 14);
 
 
-/* ========================= */
-/* GÜN SAYISI HESAPLAMA */
-/* ========================= */
+/* =========================
+   GÜN HESAPLA
+========================= */
 
 function calculateDays() {
 
     const now = new Date();
-
-    /*
-       Saatleri hesaba katmıyoruz.
-       Böylece gün değişiminde sayaç düzgün çalışır.
-    */
 
     const today =
         new Date(
@@ -331,33 +607,28 @@ function calculateDays() {
         START_DATE.getTime();
 
 
-    const days =
-        Math.floor(
-            difference /
-            (1000 * 60 * 60 * 24)
-        );
+    return Math.floor(
+        difference /
+        (1000 * 60 * 60 * 24)
+    );
 
-
-    return days;
 }
 
 
-/* ========================= */
-/* ANA SAYFAYI AÇ */
-/* ========================= */
+/* =========================
+   SITEYİ AÇ
+========================= */
 
 function openSite() {
 
     document
         .getElementById("loginScreen")
-        .classList
-        .add("hidden");
+        .style.display = "none";
 
 
     document
         .getElementById("mainScreen")
-        .classList
-        .remove("hidden");
+        .style.display = "block";
 
 
     document
@@ -365,26 +636,24 @@ function openSite() {
         .textContent =
         calculateDays()
         .toLocaleString("tr-TR");
+
 }
 
 
-/* ========================= */
-/* ŞİFRE KONTROL */
-/* ========================= */
+/* =========================
+   ŞİFRE KONTROL
+========================= */
 
 function checkPassword() {
 
     const input =
         document.getElementById("password");
 
-
     const error =
         document.getElementById("error");
 
 
-    if (
-        input.value === PASSWORD
-    ) {
+    if (input.value === PASSWORD) {
 
         error.textContent = "";
 
@@ -406,9 +675,7 @@ function checkPassword() {
 }
 
 
-/* ========================= */
-/* GİRİŞ BUTONU */
-/* ========================= */
+/* BUTON */
 
 document
     .getElementById("loginButton")
@@ -418,9 +685,7 @@ document
     );
 
 
-/* ========================= */
-/* ENTER İLE GİRİŞ */
-/* ========================= */
+/* ENTER */
 
 document
     .getElementById("password")
@@ -428,9 +693,7 @@ document
         "keydown",
         function(event) {
 
-            if (
-                event.key === "Enter"
-            ) {
+            if (event.key === "Enter") {
 
                 checkPassword();
 
@@ -439,8 +702,8 @@ document
         }
     );
 
+
 </script>
 
 </body>
-
 </html>
