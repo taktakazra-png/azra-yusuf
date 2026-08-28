@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bizim Hikâyemiz</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f6a8cf,
+            #b8d8ff
+        );
+
+    color: #111;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.box {
+    width: 100%;
+    max-width: 600px;
+
+    background: rgba(255,255,255,0.93);
+
+    border-radius: 30px;
+
+    padding: 40px 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.18);
+}
+
+/* ŞİFRE EKRANI */
+
+.lock {
+    font-size: 45px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+input {
+    width: 100%;
+    max-width: 300px;
+
+    padding: 15px;
+
+    border: 2px solid #111;
+
+    border-radius: 14px;
+
+    font-size: 18px;
+
+    text-align: center;
+
+    margin: 15px 0;
+
+    outline: none;
+}
+
+button {
+    width: 100%;
+    max-width: 300px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #111;
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+#error {
+    color: #d00050;
+
+    margin-top: 10px;
+
+    min-height: 22px;
+}
+
+/* ANA SAYFA */
+
+.names {
+    font-size: 40px;
+
+    font-weight: bold;
+
+    margin: 15px 0;
+}
+
+.date {
+    font-size: 20px;
+
+    margin-bottom: 30px;
+}
+
+.counter {
+    padding: 25px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8b9d8,
+            #c4ddff
+        );
+}
+
+.number {
+    font-size: 50px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.quote {
+    font-size: 20px;
+
+    font-style: italic;
+
+    margin-top: 30px;
+}
+
+.heart {
+    font-size: 30px;
+
+    letter-spacing: 8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- ========================= -->
+<!-- ŞİFRE EKRANI -->
+<!-- ========================= -->
+
+<section
+    id="loginScreen"
+    class="screen"
+>
+
+<div class="box">
+
+    <div class="lock">
+        🔒
+    </div>
+
+    <h1>
+        Özel bir yer
+    </h1>
+
+    <p>
+        Devam etmek için şifreyi gir.
+    </p>
+
+    <input
+        id="password"
+        type="password"
+        inputmode="numeric"
+        maxlength="6"
+        placeholder="Şifre"
+        autocomplete="off"
+    >
+
+    <button
+        id="loginButton"
+    >
+        Giriş
+    </button>
+
+    <div id="error"></div>
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- ANA SAYFA -->
+<!-- ========================= -->
+
+<section
+    id="mainScreen"
+    class="screen hidden"
+>
+
+<div class="box">
+
+    <div class="heart">
+        ♡ ♥ ♡
+    </div>
+
+    <div class="names">
+        Azra &amp; Yusuf
+    </div>
+
+    <div class="date">
+        14.05.2022
+    </div>
+
+
+    <div class="counter">
+
+        <div
+            class="number"
+            id="daysTogether"
+        >
+            0
+        </div>
+
+        <div>
+            gündür birlikteyiz 💗
+        </div>
+
+    </div>
+
+
+    <div class="quote">
+
+        “Kader gayrete aşıktır.”
+
+    </div>
+
+
+    <div class="heart">
+        ♥
+    </div>
+
+</div>
+
+</section>
+
+
+<script>
+
+/* ========================= */
+/* ŞİFRE */
+/* ========================= */
+
+const PASSWORD = "140522";
+
+
+/* ========================= */
+/* BAŞLANGIÇ TARİHİ */
+/* ========================= */
+
+/*
+   JavaScript'te aylar 0'dan başlar.
+
+   4 = Mayıs
+
+   Yani:
+   2022, 4, 14
+   = 14 Mayıs 2022
+*/
+
+const START_DATE =
+    new Date(2022, 4, 14);
+
+
+/* ========================= */
+/* GÜN SAYISI HESAPLAMA */
+/* ========================= */
+
+function calculateDays() {
+
+    const now = new Date();
+
+    /*
+       Saatleri hesaba katmıyoruz.
+       Böylece gün değişiminde sayaç düzgün çalışır.
+    */
+
+    const today =
+        new Date(
+            now.getFullYear(),
+            now.getMonth(),
+            now.getDate()
+        );
+
+
+    const difference =
+        today.getTime()
+        -
+        START_DATE.getTime();
+
+
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    return days;
+}
+
+
+/* ========================= */
+/* ANA SAYFAYI AÇ */
+/* ========================= */
+
+function openSite() {
+
+    document
+        .getElementById("loginScreen")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("mainScreen")
+        .classList
+        .remove("hidden");
+
+
+    document
+        .getElementById("daysTogether")
+        .textContent =
+        calculateDays()
+        .toLocaleString("tr-TR");
+}
+
+
+/* ========================= */
+/* ŞİFRE KONTROL */
+/* ========================= */
+
+function checkPassword() {
+
+    const input =
+        document.getElementById("password");
+
+
+    const error =
+        document.getElementById("error");
+
+
+    if (
+        input.value === PASSWORD
+    ) {
+
+        error.textContent = "";
+
+        openSite();
+
+    }
+
+    else {
+
+        error.textContent =
+            "Şifre yanlış. Tekrar dene.";
+
+        input.value = "";
+
+        input.focus();
+
+    }
+
+}
+
+
+/* ========================= */
+/* GİRİŞ BUTONU */
+/* ========================= */
+
+document
+    .getElementById("loginButton")
+    .addEventListener(
+        "click",
+        checkPassword
+    );
+
+
+/* ========================= */
+/* ENTER İLE GİRİŞ */
+/* ========================= */
+
+document
+    .getElementById("password")
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key === "Enter"
+            ) {
+
+                checkPassword();
+
+            }
+
+        }
+    );
+
+</script>
+
+</body>
+
+</html>
